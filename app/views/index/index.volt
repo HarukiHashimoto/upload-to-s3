@@ -7,5 +7,5 @@
 <p>This page is located at <code>views/index/index.volt</code></p>
 
 <p>
-    {{foo}}
+    インデックス
 </p>
