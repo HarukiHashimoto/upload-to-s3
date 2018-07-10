@@ -30,32 +30,32 @@ $di->setShared('url', function () {
 /**
  * Setting up the view component
  */
-$di->setShared('view', function () {
-    $config = $this->getConfig();
+ $di->setShared('view', function () {
+     $config = $this->getConfig();
 
-    $view = new View();
-    $view->setDI($this);
-    $view->setViewsDir($config->application->viewsDir);
+     $view = new View();
+     $view->setDI($this);
+     $view->setViewsDir($config->application->viewsDir);
 
-    $view->registerEngines([
-        '.volt' => function ($view) {
-            $config = $this->getConfig();
+     $view->registerEngines([
+         '.volt' => function ($view) {
+             $config = $this->getConfig();
 
-            $volt = new VoltEngine($view, $this);
+             $volt = new VoltEngine($view, $this);
 
-            $volt->setOptions([
-                'compiledPath' => $config->application->cacheDir,
-                'compiledSeparator' => '_'
-            ]);
+             $volt->setOptions([
+                 'compiledPath' => $config->application->cacheDir,
+                 'compiledSeparator' => '_'
+             ]);
 
-            return $volt;
-        },
-        '.phtml' => PhpEngine::class
+             return $volt;
+         },
+         '.phtml' => PhpEngine::class
 
-    ]);
+     ]);
 
-    return $view;
-});
+     return $view;
+ });
 
 /**
  * Database connection is created based in the parameters defined in the configuration file
