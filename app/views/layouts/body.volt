@@ -1,5 +1,7 @@
 <body>
-    {{ content() }}
+    <div id="content">
+        {{ content() }}
+    </div>
 
-    <!-- include JavaScripts -->
+    <!-- include public JavaScripts -->
 </body>

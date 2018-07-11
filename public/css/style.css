@@ -1,0 +1,17 @@
+html {
+    width: 100%
+}
+
+body {
+    width: 100%;
+}
+
+#content {
+    width: 100%;
+}
+
+.wrapper {
+    max-width: 60%;
+    width: auto;
+    margin: 0 auto;
+}
