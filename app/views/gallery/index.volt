@@ -3,6 +3,13 @@
         <h1>Lab Gallery</h1>
     </div>
     <div class="gallery-body">
+        <div class="drag-and-drop-area drag-and-drop-area-out" id="upload">
+            <span>
+                <i class="fa fa-image"></i>
+                Drag and drop your files
+            </span>
+        </div>
+
         <div class="grid">
             <div class="grid-sizer"></div>
             <div class="grid-item">
@@ -36,4 +43,15 @@ $('.grid').masonry({
     gutter: 10,
     horizontalOrder: true
 });
+</script>
+<script type="text/javascript" src="js/dropzone.js"></script>
+<script type="text/javascript"> // ファイルアップロード
+    Dropzone.options.dragAndDropArea = {
+      parallelUploads: 1, // 何ファイルずつアップロードするか
+      acceptedFiles: "image/*,text/*", // 許可 MEME TYPE
+      maxFiles: 1, // 1度にアップロードできるファイルの数
+      // maxFilesize: 0.5, // 1つのファイルの最大サイズ(メガ)
+      autoProcessQueue: false, // 登録ボタンを押すまでアップロードをストップ
+    };
+  var dz = new Dropzone("#upload",{url:"img"});
 </script>
