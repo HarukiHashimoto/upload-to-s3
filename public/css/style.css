@@ -15,3 +15,23 @@ body {
     width: auto;
     margin: 0 auto;
 }
+
+.grid {
+    /* background: #EEE; */
+    width: 100%;
+}
+
+.grid-sizer,
+.gird-item {
+    width: 20%;
+}
+
+.grid-item {
+    width: 20%;
+    min-width: 150px;
+    margin-bottom: 10px;
+}
+
+.grid-item img {
+    width: 100%;
+}

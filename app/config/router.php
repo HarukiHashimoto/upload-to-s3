@@ -13,3 +13,11 @@ $router->add(
         'action' => 'info'
     ]
 );
+
+$router->add(
+    '/',
+    [
+        'controller' => 'gallery',
+        'action' => ''
+    ]
+);
