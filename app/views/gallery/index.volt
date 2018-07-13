@@ -1,11 +1,11 @@
 <div class="wrapper">
     <div class="gallery-header">
-        <h1>Lab Gallery</h1>
+        <h1 class="ui header">Lab Gallery</h1>
     </div>
     <div class="gallery-body">
         <div class="drag-and-drop-area drag-and-drop-area-out" id="upload">
             <span>
-                <i class="fa fa-image"></i>
+                <i class="file image icon"></i>
                 Drag and drop your files
             </span>
         </div>

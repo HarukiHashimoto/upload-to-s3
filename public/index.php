@@ -38,6 +38,7 @@ try {
      * Handle the request
      */
     $application = new \Phalcon\Mvc\Application($di);
+    $di['app'] = $application;
 
     echo str_replace(["\n","\r","\t"], '', $application->handle()->getContent());
 
