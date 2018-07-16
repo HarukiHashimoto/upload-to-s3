@@ -30,6 +30,10 @@
     <div class="gallery-footer">
 
     </div>
+    <div id="component-ex">
+        <example></example>
+    </div>
+
 </div>
 
 <!-- include JS -->
