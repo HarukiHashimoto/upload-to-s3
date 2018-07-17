@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 use Phalcon\Db\Column;
 use Phalcon\Db\Index;
@@ -69,7 +69,49 @@ class ImageMigration_101 extends Migration
      */
     public function up()
     {
-
+        $this->morphTable('image', [
+                'columns' => [
+                    new Column(
+                        'id',
+                        [
+                            'type' => Column::TYPE_INTEGER,
+                            'notNull' => true,
+                            'autoIncrement' => true,
+                            'size' => 11,
+                            'first' => true
+                        ]
+                    ),
+                    new Column(
+                        'upload_date',
+                        [
+                            'type' => Column::TYPE_TIMESTAMP,
+                            'default' => "CURRENT_TIMESTAMP",
+                            'notNull' => true,
+                            'size' => 1,
+                            'after' => 'id'
+                        ]
+                    ),
+                    new Column(
+                        's3_key',
+                        [
+                            'type' => Column::TYPE_TEXT,
+                            'notNull' => true,
+                            'size' => 1,
+                            'after' => 'upload_date'
+                        ]
+                    )
+                ],
+                'indexes' => [
+                    new Index('PRIMARY', ['id'], 'PRIMARY')
+                ],
+                'options' => [
+                    'TABLE_TYPE' => 'BASE TABLE',
+                    'AUTO_INCREMENT' => '10',
+                    'ENGINE' => 'InnoDB',
+                    'TABLE_COLLATION' => 'utf8_unicode_ci'
+                ],
+            ]
+        );
     }
 
     /**
