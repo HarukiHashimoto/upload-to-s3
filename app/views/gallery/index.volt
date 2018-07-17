@@ -30,9 +30,6 @@
     <div class="gallery-footer">
 
     </div>
-    <div id="component-ex">
-        <example></example>
-    </div>
 
 </div>
 
@@ -59,3 +56,4 @@ $('.grid').masonry({
     };
   var dz = new Dropzone("#upload",{url:"img"});
 </script>
+<script type="text/javascript" src="js/vue.js"></script>
