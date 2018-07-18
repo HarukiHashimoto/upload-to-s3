@@ -21,3 +21,19 @@ $router->add(
         'action' => ''
     ]
 );
+
+$router->addGet(
+    '/api/viewAll',
+    [
+        'controller' => 'gallery',
+        'action' => 'viewAll'
+    ]
+);
+
+$router->add(
+    '/api/upload',
+    [
+        'controller' => 'gallery',
+        'action' => 'upload'
+    ]
+);

@@ -17,24 +17,17 @@ body {
 }
 
 .grid {
-    /* background: #EEE; */
+    background: #EEE;
     width: 100%;
-    text-align: center;
 }
 
 .grid-sizer,
-.gird-item {
-    width: calc(25% - 10px);
-
-}
 
 .grid-item {
     width: calc(25% - 10px);
     min-width: 150px;
     margin-bottom: 10px;
-    display: flex;
-	align-items: center;
-    justify-content: center;
+    float: left;
 }
 
 .grid-item img {
