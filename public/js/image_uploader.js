@@ -25,14 +25,14 @@ new Vue({
         uploadLocal(){
             var image = this.uploadedImage;
             var name = this.fileName;
-            console.log(image);
-            console.log(name);
+
+            // この辺↓参考にしたよー
+            // https://github.com/axios/axios/issues/1195
+            let params = new URLSearchParams();
+            params.append('name', name);
+            params.append('image', image);
             axios
-            .post('/api/upload',
-            {
-                image: image,
-                name: name
-            })
+            .post('/api/upload', params)
             .then(function(res){
                 console.log(res);
             })
