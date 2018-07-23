@@ -1,3 +1,4 @@
 /cache
 /app/config/config.php
 /app/logs
+/vendor/aws/config.php

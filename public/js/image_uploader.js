@@ -9,9 +9,9 @@ new Vue({
     methods: {
         onFileChange(e) {
             let files = e.target.files || e.dataTransfer.files;
-            this.createImage(files[0]);
+            this.uploadedFile = files[0];
+            this.createImage(this.uploadedFile);
             this.noImage = !this.noImage;
-            console.log(files);
         },
         // アップロードした画像を表示
         createImage(file) {
@@ -23,18 +23,18 @@ new Vue({
             reader.readAsDataURL(file);
         },
         uploadLocal(){
-            var image = this.uploadedImage;
-            var name = this.fileName;
+            let formData = new FormData();
+            formData.append('image', this.uploadedFile);
 
-            // この辺↓参考にしたよー
-            // https://github.com/axios/axios/issues/1195
-            let params = new URLSearchParams();
-            params.append('name', name);
-            params.append('image', image);
+            let config = {
+                headers: {
+                    'content-type': 'multipart/form-data'
+                }
+            };
             axios
-            .post('/api/upload', params)
+            .post('/api/upload', formData, config)
             .then(function(res){
-                console.log(res);
+                console.log(res.data);
             })
             .catch(function(err){
                 console.log(err);
