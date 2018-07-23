@@ -17,7 +17,40 @@ class GalleryController extends \Phalcon\Mvc\Controller
     {
         $image = new Image();
         $data = $image->find();
+        $logger = $this->di->get('logger');
+        $client = new S3Client([
+            'profile' => 'minio-haruki',
+            'version' => 'latest',
+            'region' => 'us-west-1',
+            'endpoint' => 'http://127.0.0.1:8080',
+            'use_path_style_endpoint' => true
+        ]);
+        $bucket_name = 'minioharuki';
+        foreach ($data as $item) {
+            $s3_key = $item->s3_key;
+
+            try {
+                $res = $client->getObject([
+                    'Bucket' => $bucket_name,
+                    'Key' => $s3_key
+                ]);
+                $logger->log('ダウンロード成功');
+                $logger->log($res['ContentType']);
+                $file = base64_encode($res['Body']);
+                $logger->log($file);
+
+
+            } catch (S3Exeption $exc) {
+                $logger->error('アップロード失敗');
+                $logger->error($exc->getMessage());
+            }
+        }
+
         $this->view->images = json_safe_encode($data);
+
+
+
+
     }
 
     public function viewAllAction()
@@ -32,17 +65,39 @@ class GalleryController extends \Phalcon\Mvc\Controller
         $image = new Image();
         $request = new Request();
         $logger = $this->di->get('logger');
-        $logger->info(var_export($request->getUploadedFiles(), true));
+//        $aws_conf = require(dirname(__FILE__).'/../../vendor/aws/conf.php');
+//        $logger->info(var_export($aws_conf), true);
+        $client = new S3Client([
+            'profile' => 'minio-haruki',
+            'version' => 'latest',
+            'region' => 'us-west-1',
+            'endpoint' => 'http://127.0.0.1:8080',
+            'use_path_style_endpoint' => true
+        ]);
+        $bucket_name = 'minioharuki';
 
         foreach ($request->getUploadedFiles() as $file) {
+            $name = $file->getName();
             $file->moveTo('public/img/'.$file->getName());
-            $image->s3_key = 'img/'.$file->getName();
+            $file_path = 'public/img/'.$file->getName();
+            $key = $name;
+            $image->s3_key = $key;
             $image->save();
-            $logger->info($file->getName());
+
+
+            try {
+                $res = $client->putObject([
+                    'Bucket' => $bucket_name,
+                    'Key' => $key,
+                    'SourceFile' => $file_path
+                ]);
+                $logger->log('アップロード成功');
+                $logger->log(var_export($res), true);
+            } catch (S3Exception $exc) {
+                $logger->error('アップロード失敗');
+                $logger->error($exc->getMessage());
+            }
         }
-
-        $client = S3Client::factory(dirname(__FILE__).'/../../vendor/aws/conf.php');
-
 
 //        $file = $request->getPost('image');
 //        $name = $request->getPost('name');
