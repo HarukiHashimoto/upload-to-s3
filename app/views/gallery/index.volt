@@ -25,7 +25,7 @@
         <div class="grid" id="view-all" data-packery='{ "itemSelector": ".grid-item", "gutter": 10 }'>
             <div class="grid-sizer"></div>
             <div v-for='image in images' class="grid-item" style="position: relative;">
-                <img :src='image.s3_key' />
+                <img :src="'img/' + image.s3_key" />
             </div>
         </div>
     </div>
@@ -37,22 +37,9 @@
 
 <!-- include JS -->
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-{# <script type="text/javascript" src="js/masonry.pkgd.min.js"></script> #}
-{# <script type="text/javascript" src="js/dropzone.js"></script> #}
-{# <script type="text/javascript"> // ファイルアップロード
-    Dropzone.options.upload = {
-      parallelUploads: 1, // 何ファイルずつアップロードするか
-      acceptedFiles: "image/*,text/*", // 許可 MEME TYPE
-      maxFiles: 1, // 1度にアップロードできるファイルの数
-      // maxFilesize: 0.5, // 1つのファイルの最大サイズ(メガ)
-      autoProcessQueue: false, // 登録ボタンを押すまでアップロードをストップ
-    };
-  var dz = new Dropzone("#upload",{url:"img"});
-</script> #}
 <script type="text/javascript" src="js/vue.js"></script>
 <script type="text/javascript" src="js/axios.min.js"></script>
 <script type="text/javascript" src="js/view_all.js"></script>
 <script type="text/javascript" src="js/image_uploader.js"></script>
-
-{# <script type="text/javascript" src="js/packery.pkgd.min.js"></script> #}
+<script type="text/javascript" src="js/masonry.pkgd.min.js"></script>
 <script type="text/javascript" src="js/mymasonry.js"></script>

@@ -1,7 +1,10 @@
-// $('.grid').masonry({
-//     columnWidth: '.grid-sizer',
-//     itemSelector: '.grid-item',
-//     percentPosition: true,
-//     gutter: 10,
-//     horizontalOrder: true
-// });
+$(window).on('load', function() {
+    $('.grid').masonry({
+        columnWidth: '.grid-sizer',
+        itemSelector: '.grid-item',
+        percentPosition: true,
+        gutter: 10,
+        horizontalOrder: true
+    });
+});
+

@@ -17,17 +17,14 @@ body {
 }
 
 .grid {
-    background: #EEE;
     width: 100%;
 }
 
 .grid-sizer,
-
 .grid-item {
     width: calc(25% - 10px);
     min-width: 150px;
     margin-bottom: 10px;
-    float: left;
 }
 
 .grid-item img {

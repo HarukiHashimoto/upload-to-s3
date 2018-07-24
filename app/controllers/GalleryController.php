@@ -36,21 +36,15 @@ class GalleryController extends \Phalcon\Mvc\Controller
                 ]);
                 $logger->log('ダウンロード成功');
                 $logger->log($res['ContentType']);
-                $file = base64_encode($res['Body']);
-                $logger->log($file);
-
+                $file_path = 'public/img/'.$s3_key;
+                file_put_contents($file_path, $res['Body']);
 
             } catch (S3Exeption $exc) {
                 $logger->error('アップロード失敗');
                 $logger->error($exc->getMessage());
             }
         }
-
         $this->view->images = json_safe_encode($data);
-
-
-
-
     }
 
     public function viewAllAction()
