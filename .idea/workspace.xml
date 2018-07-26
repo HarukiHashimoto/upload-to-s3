@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17c382b6-3fc4-42c5-afe4-d1449319e5cd" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/gallery/index.volt" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/gallery/index.volt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,7 +42,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="GalleryController.php" pinned="false" current-in-tab="true">
+          <file leaf-file-name="GalleryController.php" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/controllers/GalleryController.php">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="675">
@@ -50,6 +50,18 @@
                   <folding>
                     <element signature="e#65#90#0#PHP" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/README.md">
+              <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+                <state split_layout="SPLIT">
+                  <first_editor relative-caret-position="120">
+                    <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+                  </first_editor>
+                  <second_editor />
                 </state>
               </provider>
             </entry>
@@ -157,6 +169,7 @@
         <option value="$PROJECT_DIR$/public/js/mymasonry.js" />
         <option value="$PROJECT_DIR$/app/controllers/GalleryController.php" />
         <option value="$PROJECT_DIR$/app/views/gallery/index.volt" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -190,6 +203,9 @@
     <option name="y" value="23" />
     <option name="width" value="2880" />
     <option name="height" value="1597" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -275,12 +291,12 @@
       <workItem from="1532331491159" duration="16713000" />
       <workItem from="1532358203596" duration="4857000" />
       <workItem from="1532492641797" duration="1298000" />
-      <workItem from="1532543031631" duration="556000" />
+      <workItem from="1532543031631" duration="1153000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24293000" />
+    <option name="totallyTimeSpent" value="24890000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2880" height="1597" extended-state="0" />
@@ -314,13 +330,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/logs/.log">
       <provider selected="true" editor-type-id="LogFileEditorProvider">
         <state relative-caret-position="240">
@@ -583,6 +592,16 @@
           <folding>
             <element signature="e#65#90#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="120">
+            <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
