@@ -19,13 +19,11 @@ class GalleryController extends \Phalcon\Mvc\Controller
         $data = $image->find();
         $logger = $this->di->get('logger');
         $client = new S3Client([
-            'profile' => 'minio-haruki',
+            'profile' => 'default',
             'version' => 'latest',
-            'region' => 'us-west-1',
-            'endpoint' => 'http://127.0.0.1:8080',
-            'use_path_style_endpoint' => true
+            'region' => 'us-east-1',
         ]);
-        $bucket_name = 'minioharuki';
+        $bucket_name = 'haruki-training-bucket';
         foreach ($data as $item) {
             $s3_key = $item->s3_key;
 
@@ -62,13 +60,11 @@ class GalleryController extends \Phalcon\Mvc\Controller
 //        $aws_conf = require(dirname(__FILE__).'/../../vendor/aws/conf.php');
 //        $logger->info(var_export($aws_conf), true);
         $client = new S3Client([
-            'profile' => 'minio-haruki',
+            'profile' => 'default',
             'version' => 'latest',
-            'region' => 'us-west-1',
-            'endpoint' => 'http://127.0.0.1:8080',
-            'use_path_style_endpoint' => true
+            'region' => 'us-east-1',
         ]);
-        $bucket_name = 'minioharuki';
+        $bucket_name = 'haruki-training-bucket';
 
         foreach ($request->getUploadedFiles() as $file) {
             $name = $file->getName();
