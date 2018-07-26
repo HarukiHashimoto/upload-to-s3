@@ -1,4 +1,4 @@
-#LAB GALLERY
+# LAB GALLERY
 
 AWS冗長構成練習用アプリケーションです．
 
