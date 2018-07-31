@@ -17,7 +17,7 @@ class GalleryController extends \Phalcon\Mvc\Controller
     {
         $image = new Image();
         $data = $image->find();
-        $logger = $this->di->get('logger');
+        //$logger = $this->di->get('logger');
 	/*
         $client = new S3Client([
             'profile' => 'default',
@@ -58,7 +58,7 @@ class GalleryController extends \Phalcon\Mvc\Controller
     {
         $image = new Image();
         $request = new Request();
-        $logger = $this->di->get('logger');
+        //$logger = $this->di->get('logger');
 //        $aws_conf = require(dirname(__FILE__).'/../../vendor/aws/conf.php');
 //        $logger->info(var_export($aws_conf), true);
         $client = new S3Client([
@@ -83,11 +83,11 @@ class GalleryController extends \Phalcon\Mvc\Controller
                     'Key' => $key,
                     'SourceFile' => $file_path
                 ]);
-                $logger->log('アップロード成功');
-                $logger->log(var_export($res), true);
+                //$logger->log('アップロード成功');
+                //$logger->log(var_export($res), true);
             } catch (S3Exception $exc) {
-                $logger->error('アップロード失敗');
-                $logger->error($exc->getMessage());
+                //$logger->error('アップロード失敗');
+                //$logger->error($exc->getMessage());
             }
         }
 
