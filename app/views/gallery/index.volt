@@ -25,7 +25,7 @@
         <div class="grid" id="view-all" data-packery='{ "itemSelector": ".grid-item", "gutter": 10 }'>
             <div class="grid-sizer"></div>
             <div v-for='image in images' class="grid-item" style="position: relative;">
-                <img :src="'img/' + image.s3_key" />
+                <img :src="'http://d1en9spw9holwj.cloudfront.net/' + image.s3_key" />
             </div>
         </div>
     </div>

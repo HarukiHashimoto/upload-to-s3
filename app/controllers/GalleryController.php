@@ -18,6 +18,7 @@ class GalleryController extends \Phalcon\Mvc\Controller
         $image = new Image();
         $data = $image->find();
         $logger = $this->di->get('logger');
+	/*
         $client = new S3Client([
             'profile' => 'default',
             'version' => 'latest',
@@ -38,10 +39,11 @@ class GalleryController extends \Phalcon\Mvc\Controller
                 file_put_contents($file_path, $res['Body']);
 
             } catch (S3Exeption $exc) {
-                $logger->error('アップロード失敗');
+                $logger->error('ダウンロード失敗');
                 $logger->error($exc->getMessage());
             }
         }
+	*/
         $this->view->images = json_safe_encode($data);
     }
 
