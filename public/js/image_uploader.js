@@ -35,7 +35,7 @@ new Vue({
             .post('/api/upload', formData, config)
             .then(function(res){
                 console.log(res.data);
-		swal("Good job!", "画像をアップロードしました!", "success").then(){location.reload();};
+		swal("Good job!", "画像をアップロードしました!", "success").then(function(){location.reload();});
             })
             .catch(function(err){
                 console.log(err);
