@@ -37,6 +37,7 @@
 
 <!-- include JS -->
 <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript" src="js/vue.js"></script>
 <script type="text/javascript" src="js/axios.min.js"></script>
 <script type="text/javascript" src="js/view_all.js"></script>

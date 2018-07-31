@@ -35,6 +35,7 @@ new Vue({
             .post('/api/upload', formData, config)
             .then(function(res){
                 console.log(res.data);
+		swal("Good job!", "You clicked the button!", "success");
             })
             .catch(function(err){
                 console.log(err);
